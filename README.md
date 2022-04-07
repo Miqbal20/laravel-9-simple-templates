@@ -71,7 +71,7 @@ Template : AdminLTE 3.2.0<br />
 ## Cara Penggunaan
 1.Clone Project<br />
 2.Buat Database dengan menggunakan nama "template", atau bisa di custom dengan mengedit file .env<br />
-3.Buka terminal / cmd lalu ketikan perintah "composer update"<br />
+3.Buka folder project, lalu buka terminal / cmd lalu ketikan perintah "composer update"<br />
 4.Buka folder database => seeders => DatabaseSeeder.php<br />
 5.Edit username dan password sesuai selera, lalu buka terminal / cmd dan ketikan perintah "php artisan migrate:fresh --seed"<br />
 4.Enjoy it!<br />
