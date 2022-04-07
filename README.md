@@ -67,7 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 Template : AdminLTE 3.2.0<br />
 1.Login + SweetAlert2 manual tanpa Jetstream<br />
 2.CRUD Simple<br />
-3.CRUD Ajax
+3.CRUD Ajax<br />
 
 ## Cara Penggunaan
 1.Clone Project<br />
