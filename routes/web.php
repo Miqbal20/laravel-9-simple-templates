@@ -28,4 +28,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/dashboard/crud', [DashboardController::class, 'crud'])->name('crud');
+Route::post('/dashboard/crud/store', [DashboardController::class, 'store'])->name('crud_tambah');
+Route::post('/dashboard/crud/{id}/update', [DashboardController::class, 'update']);
+Route::delete('/dashboard/crud/{id}/destroy', [DashboardController::class, 'destroy']);
 Route::get('/dashboard/crudAjax', [DashboardController::class, 'crudAjax'])->name('crudAjax');

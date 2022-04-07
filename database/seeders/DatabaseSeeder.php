@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\Dummy;
 
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        Dummy::factory(30)->create();
 
         $password = bcrypt('rahasia');
         User::create([

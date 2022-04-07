@@ -92,43 +92,8 @@
 {{-- Sweet Alert --}}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-@if(Session::has('status'))
-<script> 
-        var type = "{{ Session::get('status') }}"
-        switch(type){           
-            case 'success':
-                Swal.fire({
-                icon: 'success',
-                title: '{{ Session::get('title') }}',
-                text: '{{ Session::get('message') }}',               
-                })
-            break;
-            case 'error':
-                Swal.fire({
-                icon: 'error',
-                title: '{{ Session::get('title') }}',
-                text: '{{ Session::get('message') }}',               
-                })
-            break;
-            case 'info':
-                Swal.fire({
-                icon: 'info',
-                title: '{{ Session::get('title') }}',
-                text: '{{ Session::get('message') }}',               
-                })
-            break;
-            case 'update':
-                Swal.fire({
-                icon: 'sucess',
-                title: '{{ Session::get('title') }}',
-                text: '{{ Session::get('message') }}',               
-                })
-            break;
-    }     
-    </script>
-@endif
+@include('notification/sweetalert')
 
-   
     
 </body>
 </html>

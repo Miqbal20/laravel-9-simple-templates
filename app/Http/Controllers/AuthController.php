@@ -30,7 +30,7 @@ class AuthController extends Controller
         if(Auth::attempt($validated)){
             $request->session()->regenerate();
             $notification = array(
-                'status' => 'success',
+                'status' => 'toast_success',
                 'title' => 'Login Berhasil',
                 'message' => 'Login Berhasil',
 
@@ -59,7 +59,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         $notification = array(
-            'status' => 'success',
+            'status' => 'toast_success',
             'title' => 'Logout berhasil',
             'message' => 'Terima kasih telah menggunakan aplikasi kami'
         );
