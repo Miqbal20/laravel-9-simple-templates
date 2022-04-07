@@ -27,3 +27,5 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/crud', [DashboardController::class, 'crud'])->name('crud');
+Route::get('/dashboard/crudAjax', [DashboardController::class, 'crudAjax'])->name('crudAjax');
