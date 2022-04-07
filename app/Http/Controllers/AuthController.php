@@ -10,6 +10,10 @@ use Carbon\Carbon;
 class AuthController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
     public function index(){
 
         return view('auth.login');
@@ -38,7 +42,7 @@ class AuthController extends Controller
             $update->updated_at = now();
             $update->save();
 
-            return redirect()->intended('/login')->with($notification);
+            return redirect()->intended('/dashboard')->with($notification);
         }
 
         $notification = array(
@@ -49,4 +53,17 @@ class AuthController extends Controller
         return back()->with($notification);
 
     }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        $notification = array(
+            'status' => 'success',
+            'title' => 'Logout berhasil',
+            'message' => 'Terima kasih telah menggunakan aplikasi kami'
+        );
+
+        return redirect('/login')->with($notification);
+    }    
 }
